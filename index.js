@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import $ from 'jquery';
+import marked from 'marked';
+
 var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function(comment) {
@@ -122,6 +127,6 @@ var CommentBox = React.createClass({
 });
 
 ReactDOM.render(
-  <CommentBox url="/api/comments" pollInterval={2000} />,
+  <CommentBox url="http://localhost:5000/api/comments" pollInterval={2000} />,
   document.getElementById('content')
 );
